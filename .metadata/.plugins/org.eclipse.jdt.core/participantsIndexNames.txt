@@ -1,3 +1,5 @@
 INDEX VERSION 1.131
+/Users/rim-yeeun/sts/springworks/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3259528116.index
+/jwspring/src/main/java
 /Users/rim-yeeun/sts/springworks/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/532289343.index
 /jwspring/src/main/java
