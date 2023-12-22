@@ -1,0 +1,6 @@
+package com.kh.controller;
+
+@Controller // 클래스를 사용할 수 있게 객체(bean) 생성
+public class HelloController {
+
+}
