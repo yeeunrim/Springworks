@@ -1,7 +1,34 @@
 @charset "UTF-8";
 
-#content{width: 1000px; margin: 0 auto;}
+#content{width: 700px; margin: 0 auto;}
 h2{color: dimgray; text-align: center;}
 .main-pic{text-align: center;}
 .menu{text-align: center; margin: 10px;}
-.menu a{color: dimgray;}
+.menu a{color: dimgray; text-decoration: none;}
+.menu a:hover{text-decoration: line-through;}
+
+/* write.jsp */
+#write_tbl{padding: 10px; margin: 0 auto; border-collapse: collapse;}
+#write_tbl td{border: 1px solid dimgray;}
+#write_tbl td label{line-height: 50px; margin: 7px;}
+.input_blk{width: 700px; float: right; margin: 7px; padding: 7px; font-size: 15px;}
+.input_btn{float: right; margin: 5px; padding: 7px; font-size: 15px;}
+
+/* list.jsp */
+#list_wel{text-align: center; margin: 10px;}
+#wel_id{color: teal; font-style: italic;}
+#list_wel a{color: black;}
+#list_tbl{width: 100%; padding: 10px; margin: 0 auto; border-collapse: collapse;}
+#list_tbl th{background: lightgray;}
+#list_tbl th, td{border: 1px solid dimgray; padding: 7px; text-align: center;}
+#list_tbl td a{text-decoration: none; color: black;}
+#list_tbl td a:hover{text-decoration: underline; font-style: italic;}
+#list_write{text-align: right;}
+#list_write a{color: black;}
+.list_btn{margin: 10px 0 0 0; padding: 7px; font-size: 15px;}
+
+/* join.jsp */
+#join_tbl{padding: 10px; margin: 0 auto; border-collapse: collapse;}
+#join_tbl td{border: 1px solid dimgray;}
+#join_tbl td label{line-height: 50px; margin: 7px;}
+.join_blk{width: 300px; float: right; margin: 7px; padding: 7px; font-size: 15px;}

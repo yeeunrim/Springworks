@@ -4,36 +4,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글쓰기 폼</title>
+<title>SpringBoard-jdbc | 글 작성</title>
 <link rel="stylesheet" href="/resources/css/style.css">
 </head>
 <body>
 	<div id="content">
-		<h2>글쓰기</h2>
+		<h2>Content</h2>
 		<form action="/board/write" method="post">
-			<table>
+			<table id="write_tbl">
 				<tr>
 					<td>
-						<label>글 제목</label>
-						<input type="text" name="boardTitle">
+						<input type="text" name="boardTitle" class="input_blk" placeholder="title" required>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label>글쓴이</label>
-						<input type="text" name="boardWriter">
+						<input type="text" name="boardWriter" class="input_blk" value="${sessionId}" readonly>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label>글내용</label>
-						<textarea rows="5" cols="50" name="boardContent"></textarea>
+						<textarea rows="20" cols="50" name="boardContent" class="input_blk"  placeholder="content" required></textarea>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2">
-						<input type="submit" value="등록">
-						<input type="reset" value="취소">
+						<input type="reset" value="RESET" class="input_btn">
+						<input type="submit" value="SUBMIT" class="input_btn">
 					</td>
 				</tr>
 			</table>
