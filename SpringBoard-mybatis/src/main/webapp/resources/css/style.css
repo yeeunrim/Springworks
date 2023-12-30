@@ -1,0 +1,270 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Work+Sans&display=swap');
+
+/* all */
+*{
+	font-family: 'Work Sans', sans-serif; 
+  	margin: 0; 
+  	padding: 0;
+}
+#content{
+	width: 100%; 
+ 	margin: 0 auto;
+}
+
+/* ---------------------------------------- */
+
+/* index.jsp */
+#content h1{
+	text-align: center; 
+	margin: 10px;
+}
+#content h1 a{
+	font-family: 'Rubik Glitch'; 
+	text-decoration: none; 
+	color: black;
+}
+#content img{
+	z-index: -1; 
+	position: absolute; 
+	top: 0;
+}
+#menu{
+	width: 700px; 
+	text-align: center; 
+	margin: 10px auto;
+}
+#menu a{
+	text-decoration: none; 
+	color: black; 
+	border-bottom: 2px solid black;
+}
+#menu a:hover{
+	font-style: italic;
+}
+#welcome{
+	width: 250px; 
+	background: black; 
+	border: 1px solid white; 
+	padding: 10px; 
+	margin: 0 auto;
+	margin-top: 570px;
+}
+#welcome p{
+	color: white; 
+	text-align: center;
+}
+
+/* ---------------------------------------- */
+
+/* main.jsp */
+#main{
+	width: 450px; 
+	border: 1px solid black; 
+	margin: 200px auto; 
+	background: lightgray;
+}
+#main h3{
+	text-align: center; 
+	margin: 20px;
+}
+#wel_id{
+	color: teal; 
+	font-style: italic;
+}
+#main_btns{
+	text-align: center; 
+	margin: 20px;
+}
+.logout_btn{
+	margin: 5px; 
+	padding: 10px; 
+	font-size: 15px; 
+	background: linear-gradient(0deg, dimgray, white); 
+	border-radius: 20%; 
+	border: none; 
+	box-shadow: 0px 0px 5px dimgray;
+} 
+
+/* ---------------------------------------- */
+
+/* join.jsp */
+#join{
+	width: 450px; 
+	margin: 0 auto;
+}
+#join h4{
+	text-align: center; 
+	margin: 50px 20px 20px 20px;
+}
+#join p{
+	text-align: right; 
+	margin: 10px 20px;
+}
+#join_tbl{
+	margin: 0 auto;
+}
+#join_tbl tr td{
+	border: none;
+}
+.join_blk{
+	width: 400px; 
+	margin: 7px; 
+	padding: 10px; 
+	border: 1px solid black;
+	outline: none;
+	float: right;
+}
+.join_btn{
+	width: 422px; 
+	padding: 10px; 
+	font-size: 15px; 
+	background: black; 
+	border: none; 
+	color: white; 
+	box-shadow: 0px 0px 5px dimgray; 
+	margin: 15px 5px;
+}
+
+/* ---------------------------------------- */
+
+/* login.jsp */
+#login{
+	width: 450px; 
+	margin: 0 auto;
+}
+#login h4{
+	text-align: center; 
+	margin: 50px 20px 20px 20px;
+}
+.login_blk{
+	width: 400px; 
+	margin: 7px; 
+	padding: 10px; 
+	border: none;
+	border-bottom: 1px solid black;
+	outline: none;
+}
+
+/* ---------------------------------------- */
+
+/* userlist.jsp */
+#userlist h4{
+	text-align: center; 
+	margin: 50px 20px 20px 20px;
+}
+#userlist p{
+	text-align: center; 
+	color: dimgray;
+	margin: 20px;
+	font-size: 13px;
+}
+#list_tbl{
+	width: 700px; 
+	padding: 10px; 
+	margin: 0 auto; 
+	border-collapse: collapse;
+}
+#list_tbl th{
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 7px; 
+	text-align: center;
+}
+#list_tbl td{
+	border-bottom: 1px solid lightgray;
+	padding: 7px; 
+	text-align: center;
+}
+#list_tbl td a{
+	color: black;
+}
+#list_tbl td a:hover{
+	font-style: italic;
+}
+
+/* ---------------------------------------- */
+
+/* userdetail.jsp */
+#userdetail h4{
+	text-align: center; 
+	margin: 50px 20px 20px 20px;
+}
+#detail_tbl{
+	width: 530px; 
+	margin: 0 auto; 
+	border-collapse: collapse;
+}
+#detail_tbl td label{
+	line-height: 50px; 
+	margin: 17px;
+}
+#detail_tbl td{
+	text-align: center;
+}
+.detail_btn{
+	width: 500px; 
+	padding: 10px; 
+	font-size: 15px; 
+	background: black; 
+	border: none; 
+	color: white; 
+	box-shadow: 0px 0px 5px dimgray; 
+	margin: 15px 8px;
+	float: right;
+}
+
+/* ---------------------------------------- */
+
+/* write.jsp */
+#write h4{
+	text-align: center; 
+	margin: 50px 20px 20px 20px;
+}
+#write_tbl{
+	margin: 0 auto;
+}
+#write_tbl tr td{
+	border: none;
+}
+.write_blk{
+	width: 700px; 
+	margin: 7px; 
+	padding: 10px; 
+	border: 1px solid black;
+	outline: none;
+	float: right;
+}
+.write_btn{
+	width: 355px; 
+	padding: 10px; 
+	font-size: 15px; 
+	background: black; 
+	border: none; 
+	color: white; 
+	box-shadow: 0px 0px 5px dimgray; 
+	margin: 15px 5px;
+}
+
+/* ---------------------------------------- */
+
+/* boardlist.jsp */
+#boardlist{
+	width: 750px; 
+	margin: 0 auto;
+}
+#boardlist h4{
+	text-align: center; 
+	margin: 50px 20px 20px 20px;
+}
+.write2_btn{
+	width: 70px; 
+	padding: 10px; 
+	font-size: 15px; 
+	background: black; 
+	border: none; 
+	color: white; 
+	box-shadow: 0px 0px 5px dimgray; 
+	margin: 20px 25px;
+	float: right;
+}

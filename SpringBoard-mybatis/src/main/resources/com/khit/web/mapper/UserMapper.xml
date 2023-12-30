@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.khit.web.mapper.UserMapper">
+	<!-- 회원가입  -->
+	<insert id="insert">
+		insert into users (userid, userpasswd, username, userage) 
+		values (#{userId}, #{userPasswd}, #{userName}, #{userAge})
+	</insert>
+	
+	<!-- 회원 정보 -->
+	<!-- resultType = 반환값  -->
+	<select id="findAll" resultType="com.khit.web.dto.UserDTO">
+		select * from users order by id desc
+	</select>
+	
+	<!-- 회원 정보 상세  -->
+	<select id="findById" resultType="com.khit.web.dto.UserDTO">
+		select * from users where id = #{id}
+	</select>
+	
+	<!-- 로그인 -->
+	<select id="login" resultType="com.khit.web.dto.UserDTO">
+		select * from users where userid = #{userId} and userpasswd = #{userPasswd}
+	</select>
+</mapper>
+
