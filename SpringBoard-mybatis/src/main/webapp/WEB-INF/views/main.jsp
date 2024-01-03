@@ -16,15 +16,11 @@
 		</script>
 	</c:if>
 	
-   	<div id="content">	
-   		<h1><a href="/">KHIT EX.MYBATIS</a></h1>
-   		<img src="/resources/images/snow.jpg" alt="스노우" width="100%">
-   		<div id="menu">
-   			<a href="/board/">BOARD</a>&nbsp;&nbsp;&nbsp;	
-   			<a href="/board/write">WRITE</a>&nbsp;&nbsp;&nbsp;
-		</div>
-		
-		<div id="main">
+	<jsp:include page="layout/header.jsp"></jsp:include>
+	
+	<div id="main">
+  		<img src="/resources/images/snow.jpg" alt="스노우" width="100%">
+		<div id="main_notice">
 	   		<h3>Dear&nbsp;<span id="wel_id">${sessionId}</span>, Nice to meet you :D</h3>
 	   		<p id="main_btns">
 	   			<button onclick="update()" class="logout_btn">회원정보 수정</button>
@@ -32,7 +28,7 @@
 	   			<button onclick="logout()" class="logout_btn">로그아웃</button>
 	   		</p>
 		</div>
-   </div>
+  	</div>
    
    <script>
    		const logout = () => {

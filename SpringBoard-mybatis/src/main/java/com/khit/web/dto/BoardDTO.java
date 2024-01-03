@@ -10,9 +10,9 @@ public class BoardDTO {
 	// 필드
 		private Long id;
 		private String boardTitle;
-		private String boardWriter;
+		private String userId;
 		private String boardContent;
-		private int hit;
+		private Integer hit;
 		private Timestamp createdTime;
 		private Timestamp updatedTime;
 		

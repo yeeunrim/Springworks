@@ -5,6 +5,8 @@ INDEX VERSION 1.131
 /SpringBoard-jdbc/src/main/java
 /Users/rim-yeeun/sts/springworks/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3546974050.index
 /SpringBoard-jdbc/src/main/java
+/Users/rim-yeeun/sts/springworks/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1551073018.index
+/SpringBoard-mybatis/src/main/java
 /Users/rim-yeeun/sts/springworks/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/393804189.index
 /SpringBoard-mybatis/src/main/java
 /Users/rim-yeeun/sts/springworks/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1046137793.index

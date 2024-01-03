@@ -29,7 +29,7 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="text" name="boardWriter" class="write_blk" value="${sessionId}" readonly>
+							<input type="text" name="userId" class="write_blk" value="${sessionId}" readonly>
 						</td>
 					</tr>
 					<tr>

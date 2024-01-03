@@ -7,12 +7,17 @@
 <mapper namespace="com.khit.web.mapper.BoardMapper">
 	<!-- 글 작성 -->
 	<insert id="insert">
-		insert into boards (boardtitle, boardwriter, boardcontent) 
-		values (#{boardTitle}, #{boardWriter}, #{boardContent})
+		insert into boards (boardtitle, userId, boardcontent) 
+		values (#{boardTitle}, #{userId}, #{boardContent})
 	</insert>
 	
 	<!-- 글 목록 -->
-	<select id="getListAll" resultType="com.khit.web.dto.BoardDTO">
+	<select id="findAll" resultType="com.khit.web.dto.BoardDTO">
 		select * from boards order by id desc
+	</select>
+	
+	<!-- 글 목록 -->
+	<select id="findById" resultType="com.khit.web.dto.BoardDTO">
+		select * from boards where id = #{id}
 	</select>
 </mapper>

@@ -21,8 +21,13 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public List<BoardDTO> getListAll() {
-		return boardMapper.getListAll();
+	public List<BoardDTO> findAll() {
+		return boardMapper.findAll();
+	}
+
+	@Override
+	public BoardDTO findById(Long id) {
+		return boardMapper.findById(id);
 	}
 
 }

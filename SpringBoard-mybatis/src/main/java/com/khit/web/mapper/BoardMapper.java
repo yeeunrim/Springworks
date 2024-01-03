@@ -8,6 +8,8 @@ public interface BoardMapper {
 
 	void insert(BoardDTO boardDTO);
 
-	List<BoardDTO> getListAll();
+	List<BoardDTO> findAll();
+
+	BoardDTO findById(Long id);
 
 }

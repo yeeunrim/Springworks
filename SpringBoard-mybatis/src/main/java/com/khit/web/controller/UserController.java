@@ -70,7 +70,7 @@ public class UserController {
 		
 		if(loginUser != null) {
 			session.setAttribute("sessionId", userDTO.getUserId());
-			return "redirect:/main";			
+			return "redirect:/";			
 		} else {
 			return "/user/login";
 		}
