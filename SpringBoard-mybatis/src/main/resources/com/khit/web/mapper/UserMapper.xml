@@ -26,5 +26,20 @@
 	<select id="login" resultType="com.khit.web.dto.UserDTO">
 		select * from users where userid = #{userId} and userpasswd = #{userPasswd}
 	</select>
+	
+	<!-- 회원 정보 수정 -->
+	<select id="findByUserId" resultType="com.khit.web.dto.UserDTO">
+		select * from users where userid = #{userId}
+	</select>
+	<update id="update">
+		update users 
+		set userpasswd = #{userPasswd}, username = #{userName}, userage = #{userAge}
+		where id = #{id}
+	</update>
+	
+	<!-- 회원 정보 삭제 -->
+	<delete id="delete">
+		delete from users where id = #{id}
+	</delete>
 </mapper>
 

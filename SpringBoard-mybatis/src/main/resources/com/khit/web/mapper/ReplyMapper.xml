@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.khit.web.mapper.ReplyMapper">
+	<!-- 댓글 작성 -->
+	<insert id="insert">
+		insert into reply(boardid, replyer, replycontent) 
+		values (#{boardId}, #{replyer}, #{replyContent})
+	</insert>
+	
+	<!-- 댓글 목록 -->
+	<select id="getReplyList" resultType="com.khit.web.dto.ReplyDTO">
+		select * from reply where boardid = #{baordId}
+	</select>
+</mapper>

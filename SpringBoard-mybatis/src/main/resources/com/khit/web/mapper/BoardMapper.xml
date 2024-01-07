@@ -20,4 +20,32 @@
 	<select id="findById" resultType="com.khit.web.dto.BoardDTO">
 		select * from boards where id = #{id}
 	</select>
+	
+	<!-- 조회수 -->
+	<update id="updateHit">
+		update boards set hit = hit + 1 where id = #{id}
+	</update>
+	
+	<!-- 글 수정 -->
+	<update id="update">
+		update boards 
+		set boardtitle = #{boardTitle}, userid = #{userId}, boardcontent = #{boardContent},
+			updatedtime = now()
+		where id = #{id}
+	</update>
+	
+	<!-- 글 삭제 -->
+	<delete id="delete">
+		delete from boards where id = #{id}
+	</delete>
+	
+	<!-- 페이지 처리  -->
+	<select id="pagingList" resultType="com.khit.web.dto.BoardDTO">
+	   select * from boards order by id desc limit #{start}, #{limit}
+	</select>
+	
+	<!-- 페이지 처리 -->
+	<select id="boardCount" resultType="Integer">
+	   select count(id) from boards
+	</select>
 </mapper>

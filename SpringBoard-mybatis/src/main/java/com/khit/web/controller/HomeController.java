@@ -16,4 +16,9 @@ public class HomeController {
 	   return "main"; 
    }
    
+//   @GetMapping("/global_error")
+//   public String error() {
+//	   return "/exception/global_error";
+//   }
+   
 }

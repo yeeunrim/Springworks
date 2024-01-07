@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.khit.web.dto.UserDTO;
 import com.khit.web.service.UserService;
@@ -37,7 +38,7 @@ public class UserController {
 	public String join(@ModelAttribute UserDTO userDTO) {
 		log.info("userDTO = " + userDTO);
 		userService.insert(userDTO);
-		return "redirect:/";
+		return "redirect:/user/login";
 	}
 	
 	// 회원 목록
@@ -81,6 +82,39 @@ public class UserController {
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:/";
+	}
+	
+	// 회원 정보 수정
+	@GetMapping("/update")
+	public String update(Model model, HttpSession session) {
+		// 수정할 회원 가져오기 (세션 이름으로 가져오기)
+		String userId = (String) session.getAttribute("sessionId");
+		UserDTO userDTO = userService.finByUserId(userId);
+		model.addAttribute("user", userDTO);
+		return "/user/userupdate";
+	}
+	
+	// 회원 정보 수정 처리
+	@PostMapping("/update")
+	public String update(@ModelAttribute UserDTO userDTO) {
+		// 수정한 후, 다시 저장시킴
+		userService.update(userDTO);
+		return "redirect:/user/update?id=" + userDTO.getId();
+	}
+	
+	// 회원 정보 삭제
+	@GetMapping("/delete")
+	public String delete(@RequestParam("id") Long id) {
+		userService.delete(id);
+		return "redirect:/user/";
+	}
+	
+	// 아이디 중복 검사
+	@PostMapping("/checkuserid")
+	public @ResponseBody String checkUserId(@RequestParam("userId") String userId) {
+		log.info(userId);
+		String checkResult = userService.checkUserId(userId);
+		return checkResult; // 'usable' or 'not_usable'
 	}
 
 }

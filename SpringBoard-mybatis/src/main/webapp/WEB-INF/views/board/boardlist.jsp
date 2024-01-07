@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,12 +10,12 @@
 <link rel="stylesheet" href="/resources/css/style.css">
 </head>
 <body>
-	<c:if test="${empty sessionId}">
+	<%-- <c:if test="${empty sessionId}">
 		<script>
 			alert("로그인 후, 이용이 가능합니다.");
 			location.href = "/user/login";
 		</script>
-	</c:if>
+	</c:if> --%>
 	
 	<div id="content">
 		<h1><a href="/">KHIT EX.MYBATIS</a></h1>
@@ -36,7 +37,7 @@
 							<td>${board.id}</td>
 							<td><a href="/board?id=${board.id}">${board.boardTitle}</a></td>
 							<td>${board.userId}</td>
-							<td>${board.createdTime}</td>
+							<td><fmt:formatDate pattern="yyyy-MM-dd aa hh:mm" value="${board.createdTime}"/></td>
 							<td>${board.hit}</td>
 						</tr>
 					</c:forEach>

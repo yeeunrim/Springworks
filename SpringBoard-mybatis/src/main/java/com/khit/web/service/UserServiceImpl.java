@@ -35,4 +35,29 @@ public class UserServiceImpl implements UserService{
 		return userMapper.login(userDTO);
 	}
 
+	@Override
+	public UserDTO finByUserId(String userId) {
+		return userMapper.findByUserId(userId);
+	}
+
+	@Override
+	public void update(UserDTO userDTO) {
+		userMapper.update(userDTO);
+	}
+
+	@Override
+	public void delete(Long id) {	
+		userMapper.delete(id);
+	}
+
+	@Override
+	public String checkUserId(String userId) {
+		UserDTO user = userMapper.findByUserId(userId);
+		if(user == null) { 		  // DB에 저장된 아이디(객체)가 없으면
+			return "usable";      // 사용
+		} else {                  // DB에 저장된 아이디(객체)가 있으면
+			return "not_usable";  // 사용 불가
+		}
+	}
+
 }

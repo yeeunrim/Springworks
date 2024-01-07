@@ -15,4 +15,12 @@ public interface UserService {
 
 	UserDTO login(UserDTO userDTO);
 
+	UserDTO finByUserId(String userId);
+
+	void update(UserDTO userDTO);
+
+	void delete(Long id);
+
+	String checkUserId(String userId);
+
 }

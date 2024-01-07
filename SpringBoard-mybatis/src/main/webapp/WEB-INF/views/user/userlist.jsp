@@ -21,6 +21,7 @@
 					<th>비밀번호</th>
 					<th>이름</th>
 					<th>나이</th>
+					<th>계정</th>
 				</tr>
 				<c:forEach items="${userList}" var="user">
 					<tr>
@@ -29,6 +30,11 @@
 						<td>${user.userPasswd}</td>
 						<td>${user.userName}</td>
 						<td>${user.userAge}</td>
+						<td>
+							<a href="/user/delete?id=${user.id}">
+							<button class="delete_btn">삭제</button>
+						</a>
+					</td>
 					</tr>
 				</c:forEach>
 			</table>

@@ -4,7 +4,12 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+	<!-- 파일 업로드 설정 : 최대 사이즈 (10MB) -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="10000000"></property>
 	
-	<!-- Root Context: defines shared resources visible to all other web components -->
+	</bean>
+	
 	<context:component-scan base-package="org.khit.myapp" />
 </beans>
