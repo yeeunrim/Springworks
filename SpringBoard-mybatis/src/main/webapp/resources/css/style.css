@@ -246,6 +246,17 @@
 	margin: 15px 8px;
 	float: right;
 }
+#reply_menu{
+	border-bottom: 1px solid lightgray;
+	padding-bottom: 10px;
+	text-align: right;
+}
+#reply_menu a{
+	text-decoration: none;
+	color: dimgray;
+	font-size: 14px;
+	text-align: right;
+}
 
 /* ---------------------------------------- */
 
@@ -313,6 +324,9 @@
 #pagination a{
 	text-decoration: none;
 	color: dimgray;
+}
+#page_num:active{
+	color: black;
 }
 
 /* ---------------------------------------- */

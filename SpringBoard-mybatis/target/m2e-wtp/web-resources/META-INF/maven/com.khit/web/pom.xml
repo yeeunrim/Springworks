@@ -159,6 +159,7 @@
 			<version>4.13</version>
 			<scope>test</scope>
 		</dependency>  
+		<!-- spring-test -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-test</artifactId>

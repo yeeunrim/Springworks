@@ -78,7 +78,30 @@
 					<c:forEach items="${replyList}" var="reply">
 						<h5 id="reply_word2">${reply.replyer}</h5>
 						<p>${reply.replyContent}</p>
-						<p id="reply_date"><fmt:formatDate pattern="yyyy-MM-dd aa hh:mm" value="${reply.createdTime}" /></p>
+						<p id="reply_date">
+							<fmt:formatDate pattern="yyyy-MM-dd aa hh:mm" value="${reply.createdTime}" />&nbsp;&nbsp;&nbsp;
+							<c:if test="${not empty reply.updatedTime}">
+								<span class="boarddetail_blk" style="float: right;">
+									<c:set var="update_time" value="${(now.time - reply.updatedTime.time) / 1000}" />
+									<c:choose>
+							            <c:when test="${update_time < 60}">
+							                <fmt:formatNumber pattern="##" value="${update_time}" />초 전 수정
+							            </c:when>
+							            <c:when test="${update_time < 3600}">
+							                <fmt:formatNumber pattern="##" value="${update_time / 60}" />분 전 수정
+							            </c:when>
+							            <c:when test="${update_time < 86400}">
+							                <fmt:formatNumber pattern="##" value="${update_time / 3600}" />시간 전 수정
+							            </c:when>
+							        </c:choose>
+						       	</span>
+							</c:if>
+						</p>
+						<p id="reply_menu">
+							<a href="/reply/update?boardId=${board.id}&id=${reply.id}">수정</a> |
+							<a href="/reply/delete?boardId=${board.id}&id=${reply.id}" 
+								onclick="return confirm('정말로 삭제하시겠습니까?')">삭제</a>
+						</p>
 					</c:forEach>
 				</div>
 				<c:choose>

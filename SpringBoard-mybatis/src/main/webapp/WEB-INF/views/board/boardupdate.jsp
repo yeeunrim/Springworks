@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KHIT | UPDATE</title>
+<title>KHIT | BOARD UPDATE</title>
 <link rel="stylesheet" href="/resources/css/style.css">
 </head>
 <body>

@@ -11,4 +11,10 @@ public interface ReplyService {
 	// BoardController에서 작성
 	List<ReplyDTO> getReplyList(Long boardId);
 
+	void delete(Long id);
+
+	ReplyDTO findById(Long id);
+
+	void update(ReplyDTO replyDTO);
+
 }

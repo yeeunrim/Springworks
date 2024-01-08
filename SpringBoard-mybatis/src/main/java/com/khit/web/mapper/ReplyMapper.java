@@ -10,4 +10,10 @@ public interface ReplyMapper {
 
 	List<ReplyDTO> getReplyList(Long boardId);
 
+	void delete(Long id);
+
+	ReplyDTO findById(Long id);
+
+	void update(ReplyDTO replyDTO);
+
 }
