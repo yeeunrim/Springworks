@@ -29,7 +29,7 @@
 	</bean>
 	
 	<!-- mybatis 인터페이스 스캔 -->
-	<mybatis-spring:scan base-package="com.khit.todoweb.mapper"/>
+	<mybatis-spring:scan base-package="com.khit.web.mapper"/>
 	
 	<!-- context 스캔 -->
 	<context:component-scan base-package="com.khit.web" />

@@ -16,7 +16,7 @@
 						<a class="nav-link active" aria-current="page" href="/todo/register">To-Do Register</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="/todo/list">To-Do List</a>
+						<a class="nav-link active" aria-current="page" href="/todo/paging">To-Do List</a>
 					</li>
 				</ul>
 			</div>

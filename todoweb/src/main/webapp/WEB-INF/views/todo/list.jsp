@@ -31,7 +31,7 @@
 								<c:forEach items="${todoList}" var="todo">
 									<tr>
 										<td>${todo.tno}</td>
-										<td>${todo.title}</td>
+										<td><a href="/todo?tno=${todo.tno}">${todo.title}</a></td>
 										<td>${todo.writer}</td>
 										<td><fmt:formatDate pattern="yyyy-MM-dd aa hh:mm" value="${todo.createdDate}"/></td>
 									</tr>

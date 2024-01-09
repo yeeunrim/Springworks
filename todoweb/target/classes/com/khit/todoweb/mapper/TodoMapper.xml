@@ -5,6 +5,21 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.khit.todoweb.mapper.TodoMapper">
+	<sql id="search">
+		<where>
+			<if test="types != null and types.length > 0">
+				<foreach collection="types" item="type" open="(" close=")" separator="OR">
+					<if test="type=='t'.toString()">
+						title like concat('%', #{keyword}, '%')
+					</if>
+					<if test="type=='w'.toString()">
+						writer like concat('%', #{keyword}, '%')
+					</if>
+				</foreach>
+			</if>
+		</where>
+	</sql>
+	
 	<select id="getTime" resultType="String">
 		select now()
 	</select>
@@ -15,6 +30,35 @@
 	</insert>
 	
 	<select id="findAll" resultType="com.khit.todoweb.vo.TodoVO">
-		select * from tbl_todo order by tno desc;
+		select * from tbl_todo order by tno desc
+	</select>
+	
+	<!-- <select id="pagingList" resultType="com.khit.todoweb.vo.TodoVO">
+		select * from tbl_todo order by tno desc limit #{skip}, #{size};
+	</select> -->
+	
+	<select id="pagingList" resultType="com.khit.todoweb.vo.TodoVO">
+		select * from tbl_todo 
+		<include refid="search"></include>
+		order by tno desc limit #{skip}, #{size};
+	</select>
+	
+	<select id="findById" resultType="com.khit.todoweb.vo.TodoVO">
+		select * from tbl_todo where tno = #{tno}
+	</select>
+	
+	<delete id="delete">
+		delete from tbl_todo where tno = #{tno}
+	</delete>
+	
+	<update id="update">
+		update tbl_todo
+		set title = #{title}, writer = #{writer}
+		where tno = #{tno}
+	</update>
+	
+	<select id="todoCount" resultType="Integer">
+		select count(tno) from tbl_todo
+		<include refid="search"></include>
 	</select>
 </mapper>
