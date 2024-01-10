@@ -13,7 +13,7 @@
 	
 	<!-- 댓글 목록 -->
 	<select id="getReplyList" resultType="com.khit.web.dto.ReplyDTO">
-		select * from reply where boardid = #{baordId}
+		select * from reply where boardid = #{baordId} order by id desc
 	</select>
 	
 	<!-- 댓글 삭제 -->

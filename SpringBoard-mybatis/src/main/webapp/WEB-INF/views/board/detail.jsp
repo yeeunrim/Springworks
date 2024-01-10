@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>KHIT | BOARD DETAIL</title>
 <link rel="stylesheet" href="/resources/css/style.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -70,8 +71,7 @@
 			</table>
 			
 			<!-- 댓글 -->
-			<form action="/reply/insert" method="post" id="reply">
-				<input type="hidden" name="boardId" value="${board.id}">
+			<div id="reply">
 				<h5 id="reply_word">댓글</h5>
 				<!-- 댓글 목록 -->
 				<div id="reply_list">
@@ -106,10 +106,12 @@
 				</div>
 				<c:choose>
 					<c:when test="${not empty sessionId}">
+						<!-- 댓글 등록 -->
+						<input type="hidden" id="boardId" name="boardId" value="${board.id}">
 						<div id="reply_blk">
-							<input type="text" name="replyer" class="reply_area" value="${sessionId}" readonly>
-							<textarea rows="2" cols="50" name="replyContent" placeholder="댓글을 작성해주세요." class="reply_area" id="replyContent"></textarea>
-							<button type="submit" class="reply_btn" onclick="checkReply()">등록</button>
+							<input type="text" id="replyer"  name="replyer" class="reply_area" value="${sessionId}" readonly>
+							<textarea rows="2" cols="50" id="replyContent" name="replyContent" placeholder="댓글을 작성해주세요." class="reply_area" id="replyContent"></textarea>
+							<button type="submit" class="reply_btn" onclick="replyInsert()">등록</button>
 						</div>
 					</c:when>
 					<c:when test="${empty sessionId}">
@@ -121,24 +123,54 @@
 						</div>
 					</c:when>
 				</c:choose>
-			</form>
+			</div>
 		</div>
 	</div>
 	
 	<script>
-		const checkReply = function() {
+		const replyInsert = function() {
 			// alert("댓글 등록");
 			// 댓글 등록이 비어있으면 "댓글을 입력해주세요"
 			// 댓글 내용이 있으면 서버에 전송
-			let content = document.getElementById("replyContent");
+			let boardId = "${board.id}";
+			let replyer = document.getElementById("replyer").value;
+			let content = document.getElementById("replyContent").value;
 			
-			if(content.value == ""){
+			if(content == ""){
 				alert("댓글을 입력해주세요.");
-				content.focus();
+				document.getElementById("content").focus();
 				return false;
-			} else if(content.value != ""){
-				document.replyform.submit();
 			}
+			
+			// ajax 구현
+			$.ajax({
+				// 요청 방식 : POST, 요청 주소 : /reply/insert
+				type : "POST",
+				url : "/reply/insert",
+				data : {
+					boardId : boardId,
+					replyer : replyer,
+					replyContent : content
+				},
+				success : function(replyList){
+					console.log("댓글 등록 성공");
+					console.log(replyList);
+					// 댓글 목록
+					let output = "";
+					for(let i in replyList){
+						output += "<div class='reply'>";
+						output += "<p id='reply_word2'>" + replyList[i].replyer + "</p>";
+						output += "<p>" + replyList[i].replyContent + "</p>";
+						output += "<p>" + replyList[i].createdTime + "</p>";
+						output += "</div>";
+					}
+					document.getElementById("reply_list").innerHTML = output;
+					document.getElementById("replyContent").value = "";
+				},
+				error : function(){
+					console.log("댓글 등록 실패");
+				}
+			});
 		}
 	</script>
 </body>

@@ -4,5 +4,6 @@
 <aop-project name="todoweb"/>
 <aop-project name="jwspring"/>
 <aop-project name="SpringBoard-mybatis"/>
+<aop-project name="members"/>
 <aop-project name="SpringBoard-jdbc"/>
 </aop-reference-model>

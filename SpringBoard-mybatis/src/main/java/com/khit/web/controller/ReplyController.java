@@ -1,5 +1,7 @@
 package com.khit.web.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.khit.web.dto.ReplyDTO;
 import com.khit.web.service.ReplyService;
@@ -24,11 +27,14 @@ public class ReplyController {
 	
 	// 댓글 입력
 	@PostMapping("/insert")
-	public String replyInsert(@ModelAttribute ReplyDTO replyDTO) {
+	public @ResponseBody List<ReplyDTO> replyInsert(@ModelAttribute ReplyDTO replyDTO) {
+		// 댓글 폼에 입력된 데이터 출력
 		log.info("replyDTO : " + replyDTO);
-		// 댓글 저장
+		// 댓글 저장 처리
 		replyService.insert(replyDTO);
-		return "redirect:/board?id=" + replyDTO.getBoardId();
+		// 등록 후 댓글 목록 가져와서 detail 페이지로 보내줌
+		List<ReplyDTO> replyList = replyService.getReplyList(replyDTO.getBoardId());
+		return replyList;
 	}
 	
 	// 댓글 삭제

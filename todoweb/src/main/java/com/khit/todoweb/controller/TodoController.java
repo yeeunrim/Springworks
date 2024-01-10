@@ -36,7 +36,7 @@ public class TodoController {
 	public String registerForm(@ModelAttribute TodoDTO todoDTO) {
 		log.info("todoDTO = " + todoDTO);
 		todoService.insert(todoDTO);
-		return "redirect:/todo/list";
+		return "redirect:/todo/paging";
 	}
 	
 	// 목록보기
@@ -82,7 +82,7 @@ public class TodoController {
 	@GetMapping("/delete")
 	public String delete(@RequestParam("tno") Long tno) {
 		todoService.delete(tno);
-		return "redirect:/todo/list";
+		return "redirect:/todo/paging";
 	}
 
 }
