@@ -30,7 +30,7 @@ public class AjaxController {
 	
 	@GetMapping("/ex03")
 	public @ResponseBody String ex03(
-			@RequestParam("great") String great, 
+			@RequestParam("greet") String great, 
 			@RequestParam("num") int num) {
 		log.info("great : " + great);
 		log.info("num : " + num);

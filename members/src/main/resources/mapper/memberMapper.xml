@@ -14,4 +14,26 @@
 		select * from t_member 
 		where email = #{email} and password = #{password}
 	</select>
+	
+	<select id="findAll" resultType="member">
+		select * from t_member
+	</select>
+	
+	<select id="findById" resultType="member">
+		select * from t_member where id = #{id}
+	</select>
+	
+	<delete id="delete">
+		delete from t_member where id = #{id}
+	</delete>
+	
+	<select id="findByEmail" resultType="member">
+		select * from t_member where email = #{email}
+	</select>
+	
+	<update id="update">
+		update t_member
+		set password = #{password}, name = #{name}, age = #{age}
+		where email = #{email}
+	</update>
 </mapper>
